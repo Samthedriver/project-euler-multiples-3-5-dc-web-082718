@@ -1,18 +1,26 @@
 # Enter your procedural solution here!
-def multiples
+def collect_multiples(limit)
 
-  x = 999;
-  total = 0;
+  x = limit - 1;
+  multiples = [];
 
   for i in 1..x do
     if (i % 3 == 0) || (i % 5 == 0)
       puts i;
-      total += i;
+      multiples.push(i);
     end
   end
 
-  puts total
+  multiples
 
 end
 
-multiples
+def sum_multiples(limit)
+  multiples_array = collect_multiples(limit);
+  array_sum = 0;
+  for i in 1..multiples_array.length do
+    array_sum += multiples_array[i-1]
+  end
+
+  array_sum
+end
